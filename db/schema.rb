@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_05_004515) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_05_060729) do
   create_table "addresses", force: :cascade do |t|
-    t.text "street"
+    t.text "street_address"
     t.text "city"
+    t.text "state"
     t.text "zip"
-    t.float "lat"
-    t.float "long"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "weathers", force: :cascade do |t|
+    t.integer "address_id"
+    t.text "description"
+    t.float "temperature_f"
+    t.float "humidity"
+    t.integer "visibility"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

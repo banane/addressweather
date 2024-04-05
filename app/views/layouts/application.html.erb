@@ -10,20 +10,23 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <style type="text/css">
-    body { margin-left: 30px;}
-    h1 { 
-      color: "#cc00ff";
-      font-family: sans-serif; 
-    }   
-    h2 { font-family: sans-serif;}
-    p.label {
+    body { 
+      margin-left: 30px;
       font-family: sans-serif;
     }
-  input#submitButton  {
+    label {
+      display: block;
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+    h1 { 
+      color: "#cc00ff";
+    }   
+    
+    input#submitButton  {
       margin-block: 30px;
       display: block;
       font-weight: bold;
-      padding
       backgroundColor: "darkGrey";
       color: "#fff";
       width: 200px;

@@ -1,10 +1,15 @@
 class AddressesController < ApplicationController
     def index
-        @addresses = Address.all
+        @addresses = Address.includes(:weather).all
     end    
 
     def create
         @address = Address.create(weatherparams)
+        @weather = GetWeather.new(address: address)
+    end
+
+    def show
+        @address = Address.find_by(weather_params)        
     end
 
     private

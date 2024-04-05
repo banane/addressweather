@@ -5,25 +5,23 @@
 <ul>
 <% if @addresses.present? %>
     <% @addresses.each do |address| %>
-        <li> <%=address.street %>
+        <li> <%=address.street_address %> (<%=address.weather.first.description%>)</li>
     <% end %>
 <% end %>
 </ul>
 <hr>
-<h2>Find your weather:</h2>
+<h2>Enter your address and find your weather:</h2>
 <form method="POST" action="/addresses/new">
-<p class="label">Street Address</p>
+<label for="street_address">Street Address</label>
+<input type="text" name="street_address" placeholder="street address">
 
-<input type="text" name="Street Address" placeholder="street address">
+<label for="city">City: </label>
+<input type="text" name="city" placeholder="City">
 
-<p class="label">City</p>
-<input type="text" name="City" placeholder="City">
+<label for="state">State</label>
+<input type="text" name="state" placeholder="State">
 
-<p class="label">State</p>
-<input type="text" name="State" placeholder="State">
-
-<p class="label">Zip</p>
-
-<input type="text" name="Zip" placeholder="zip code">
-<input id="submitButton" type="Submit">
+<label for="zip">Zip</p>
+<input type="text" name="zip" placeholder="zip code">
+<input id="submitButton" type="Submit" value="Find Weather">
 </form>
