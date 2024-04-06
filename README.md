@@ -18,6 +18,22 @@ In your .zsh or terminal session.
 - This app uses the [Geocoder gem](https://github.com/alexreisner/geocoder) to detrmine latitude and longitude of each postal/mailing address.
 
 
+**User Guide**
+<img width="590" alt="front-page" src="https://github.com/banane/addressweather/assets/94928/1f735456-1722-4c2b-9bc3-36dd349c30d3">
+
+1. Add street address
+2. Click "Save"
+3. Your new address will show on a new page with its latest weather.
+
+OR
+
+<img width="718" alt="show-page" src="https://github.com/banane/addressweather/assets/94928/8a2ed97a-c86a-46c3-a369-25a7124d0cd6">
+
+
+1. On front page, see list of addresses at top of front page
+2. Pick one, click "Update weather for address"
+
+If your weather was pulled in the last 30 minutes for this zip code, it will have 'from cache: true' designation.
 
 **Coding Assignment**
 Requirements:
