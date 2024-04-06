@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=101%20Main%20St,San%20Francisco,CA,94133
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=690%20Chestnut%20St,San%20Francisco,CA,94133
     body:
       encoding: US-ASCII
       string: ''
@@ -21,11 +21,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 06 Apr 2024 18:45:48 GMT
+      - Sat, 06 Apr 2024 19:34:50 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '694'
+      - '702'
       Connection:
       - keep-alive
       Keep-Alive:
@@ -33,6 +33,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        W3sicGxhY2VfaWQiOjM0NDAzODkxNywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6NjgwNDAyNjg4LCJsYXQiOiIzNy43OTE4MTIiLCJsb24iOiItMTIyLjM5NDc1NyIsImNsYXNzIjoicGxhY2UiLCJ0eXBlIjoiaG91c2UiLCJwbGFjZV9yYW5rIjozMCwiaW1wb3J0YW5jZSI6OS45OTk5OTk5OTk5NTQ0OWUtMDYsImFkZHJlc3N0eXBlIjoicGxhY2UiLCJuYW1lIjoiIiwiZGlzcGxheV9uYW1lIjoiMTAxLCBNYWluIFN0cmVldCwgRmluYW5jaWFsIERpc3RyaWN0LCBTYW4gRnJhbmNpc2NvLCBDYWxpZm9ybmlhLCA5NDEwNSwgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsiaG91c2VfbnVtYmVyIjoiMTAxIiwicm9hZCI6Ik1haW4gU3RyZWV0IiwibmVpZ2hib3VyaG9vZCI6IkZpbmFuY2lhbCBEaXN0cmljdCIsImNpdHkiOiJTYW4gRnJhbmNpc2NvIiwic3RhdGUiOiJDYWxpZm9ybmlhIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1DQSIsInBvc3Rjb2RlIjoiOTQxMDUiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjM3Ljc5MTc2MjAiLCIzNy43OTE4NjIwIiwiLTEyMi4zOTQ4MDcwIiwiLTEyMi4zOTQ3MDcwIl19XQ==
-  recorded_at: Sat, 06 Apr 2024 18:45:48 GMT
+        W3sicGxhY2VfaWQiOjMxMTg3OTE1NSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6MjYyMjYyODk1LCJsYXQiOiIzNy44MDM4NDM3NSIsImxvbiI6Ii0xMjIuNDE0NTA3NzY1Mzg5OTciLCJjbGFzcyI6ImJ1aWxkaW5nIiwidHlwZSI6InllcyIsInBsYWNlX3JhbmsiOjMwLCJpbXBvcnRhbmNlIjo5Ljk5OTk5OTk5OTk1NDQ5ZS0wNiwiYWRkcmVzc3R5cGUiOiJidWlsZGluZyIsIm5hbWUiOiIiLCJkaXNwbGF5X25hbWUiOiI2OTAsIENoZXN0bnV0IFN0cmVldCwgTm9ydGggQmVhY2gsIFNhbiBGcmFuY2lzY28sIENhbGlmb3JuaWEsIDk0MTMzLCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJob3VzZV9udW1iZXIiOiI2OTAiLCJyb2FkIjoiQ2hlc3RudXQgU3RyZWV0IiwibmVpZ2hib3VyaG9vZCI6Ik5vcnRoIEJlYWNoIiwiY2l0eSI6IlNhbiBGcmFuY2lzY28iLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwicG9zdGNvZGUiOiI5NDEzMyIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifSwiYm91bmRpbmdib3giOlsiMzcuODAzNjYxMiIsIjM3LjgwNDAyMzQiLCItMTIyLjQxNDg1MTQiLCItMTIyLjQxNDMxMDEiXX1d
+  recorded_at: Sat, 06 Apr 2024 19:34:50 GMT
 recorded_with: VCR 6.2.0

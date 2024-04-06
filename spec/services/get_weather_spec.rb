@@ -16,8 +16,8 @@ RSpec.describe GetWeather do
  end
 
  let(:description) { "few clouds"}
- let(:temperature) { 56.26 }
- let(:humidity) { 57.0 }
+ let(:temperature) { 57.27 }
+ let(:humidity) { 55.0 }
  let(:visibility) { 10000 }
  let(:full_address) { address.full_address }
 

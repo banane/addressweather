@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=101%20Main%20St,Can%20Francisco,CA,94133
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=690%20Chestnut%20St,Can%20Francisco,CA,94133
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 06 Apr 2024 18:43:44 GMT
+      - Sat, 06 Apr 2024 19:34:51 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -33,5 +33,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-  recorded_at: Sat, 06 Apr 2024 18:43:44 GMT
+  recorded_at: Sat, 06 Apr 2024 19:34:51 GMT
 recorded_with: VCR 6.2.0
