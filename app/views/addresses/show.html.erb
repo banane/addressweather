@@ -29,6 +29,10 @@
         <b><%= day_weather&.created_at.strftime("%b %d, %Y %H:%M:%S") %></b>
     </p>
     <p>
+        <b>from cache</b>
+        <b><%= day_weather&.from_cache %></b>
+    </p>
+    <p>
         <b>Description:</b>
         <%= day_weather&.description%>
     </p>

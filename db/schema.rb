@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_05_060729) do
     t.float "temperature_f"
     t.float "humidity"
     t.integer "visibility"
+    t.boolean "from_cache"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
