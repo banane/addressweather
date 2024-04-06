@@ -5,7 +5,7 @@
 <ul>
 <% if @addresses.present? %>
     <% @addresses.each do |address| %>
-        <li> <%=address.street_address %> (<%=address.weather.first.description%>)</li>
+        <li> <%=link_to address&.street_address, "/addresses/#{address.id}" %></li>
     <% end %>
 <% end %>
 </ul>

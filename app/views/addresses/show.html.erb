@@ -1,3 +1,10 @@
+<hr>
+<%=link_to "Get latest weather", :update_weather_address, params: {id: @address.id} %> | 
+<a href="/">Go back</a>
+<hr>
+
+<h1>Weather for Address: </h1>
+<h2>Address</h2>
 <p>
 <b>Street Address: </b>
 <%= @address.street_address %>
@@ -14,14 +21,33 @@
 <b>Zip: </b>
 <%= @address.zip %>
 </p>
-<h1>Weather</h1>
-<b>description</b>
-<%= @address.weather.first.description%>
-<b>temperature (F)</b>
-<%= @address.weather.first.temperature_f%>
-<b>humidity</b>
-<%= @address.weather.first.humidity%>
-<b>visibility</b>
-<%= @address.weather.first.visibility%>
+
+<h2>Weather</h2>
+<% @address.weather.order("created_at DESC").each do |day_weather| %>
+    <p>
+        <b>as of:</b>
+        <b><%= day_weather&.created_at.strftime("%b %d, %Y %H:%M:%S") %></b>
+    </p>
+    <p>
+        <b>Description:</b>
+        <%= day_weather&.description%>
+    </p>
+    <p>
+        <b>Temperature (F):</b>
+        <%= day_weather&.temperature_f%>
+    </p>
+    <p>
+        <b>Humidity:</b>
+        <%= day_weather&.humidity%>
+    </p>
+    <p>
+        <b>Visibility:</b>
+        <%= day_weather&.visibility%>
+    </p>
+    <hr>
+<% end %>
+
 <hr>
+<%=link_to "Get latest weather", :update_weather_address, params: {id: @address.id} %> | 
 <a href="/">Go back</a>
+<hr>
