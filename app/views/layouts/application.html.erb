@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Address Weather</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <style type="text/css">
+    body { margin-left: 30px;}
+    h1 { 
+      color: "#cc00ff";
+      font-family: sans-serif; 
+    }   
+    h2 { font-family: sans-serif;}
+    p.label {
+      font-family: sans-serif;
+    }
+  input#submitButton  {
+      margin-block: 30px;
+      display: block;
+      font-weight: bold;
+      padding
+      backgroundColor: "darkGrey";
+      color: "#fff";
+      width: 200px;
+      height: 40px;
+    }
+    </style>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<h1>Weather for these Addresses</h1>
+<% unless @addresses.present? %>
+    <h2> No addresses to list.</h2>
+<% end %>
+<ul>
+<% if @addresses.present? %>
+    <% @addresses.each do |address| %>
+        <li> <%=address.street %>
+    <% end %>
+<% end %>
+</ul>
+<hr>
+<h2>Find your weather:</h2>
+<form method="POST" action="/addresses/new">
+<p class="label">Street Address</p>
+
+<input type="text" name="Street Address" placeholder="street address">
+
+<p class="label">City</p>
+<input type="text" name="City" placeholder="City">
+
+<p class="label">State</p>
+<input type="text" name="State" placeholder="State">
+
+<p class="label">Zip</p>
+
+<input type="text" name="Zip" placeholder="zip code">
+<input id="submitButton" type="Submit">
+</form>
