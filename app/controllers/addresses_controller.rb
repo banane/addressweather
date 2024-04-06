@@ -4,17 +4,26 @@ class AddressesController < ApplicationController
     end    
 
     def create
-        @address = Address.create(weatherparams)
-        @weather = GetWeather.new(address: address)
+        @address = Address.find_by(address_params)
+        if @address.nil?
+            # binding.pry
+            @address = Address.create(address_params)
+        end
+        GetWeather.run!(address: @address)
+
+        render :show
     end
 
     def show
-        @address = Address.find_by(weather_params)        
+        @address = Address.find_by(params)        
     end
 
     private
 
-    def weatherparams
-        params.permit(:weather)
+    def address_params
+        # binding.pry
+        params.permit(:street_address, :city, :state, :zip)
     end
+
+    
 end

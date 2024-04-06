@@ -14,3 +14,14 @@
 <b>Zip: </b>
 <%= @address.zip %>
 </p>
+<h1>Weather</h1>
+<b>description</b>
+<%= @address.weather.first.description%>
+<b>temperature (F)</b>
+<%= @address.weather.first.temperature_f%>
+<b>humidity</b>
+<%= @address.weather.first.humidity%>
+<b>visibility</b>
+<%= @address.weather.first.visibility%>
+<hr>
+<a href="/">Go back</a>
