@@ -12,12 +12,14 @@ class AddressesController < ApplicationController
         success =  GetCoordinates.run!(address: @address)
         if success
             success = GetWeather.run!(address: @address)
+        else
+            @address.destroy
         end
-
+        
         if @address && success
             redirect_to address_path(id: @address.id)
         else
-            flash[:notice] = "Address is incorrect or something went wrong, try again."
+            redirect_to root_path, alert: "Address is incorrect or something went wrong, try again."
         end
     end
 
