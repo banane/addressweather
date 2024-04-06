@@ -2,13 +2,11 @@ require 'rails_helper'
 
 RSpec.describe AddressesController, type: :request do
    describe 'GET /index' do    
-    let(:address) { create(:address, weather: weather) }
-    let(:weather) { create(:weather) }
+    let!(:address) { create(:address) }
 
-    it "is main page and returns weather" do
+    it "shows form input and existing addresses" do
         get "/"
-        expect(response).to include('light rain')
-        
+        expect(response).to include('address.street_address')
       end
-    end    
+    end   
 end 

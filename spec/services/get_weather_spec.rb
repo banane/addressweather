@@ -3,15 +3,14 @@ require 'geocoder'
 
 RSpec.describe GetWeather do  
  subject { described_class.run!(address: address) }
-
- let(:address) { create(:address) }
+ let(:address) { create(:address, latitude: 37.791812, longitude: -122.394757) }
  let(:weather) do
      create(:weather, 
-     address: address, 
-     description: description,
-     temperature_f: temperature,
-     humidity: humidity,
-     visibility: visibility
+        address: address, 
+        description: description,
+        temperature_f: temperature,
+        humidity: humidity,
+        visibility: visibility
      ) 
  end
 
@@ -22,18 +21,6 @@ RSpec.describe GetWeather do
  let(:full_address) { address.full_address }
 
  before do  
-    Geocoder::Lookup::Test.set_default_stub(
-        [
-            {
-            'coordinates'  => [37.791812, -122.394757],
-            'address'      => address.street_address,
-            'state'        => 'California',
-            'state_code'   => address.state,
-            'country'      => 'United States',
-            'country_code' => 'US'
-            }
-        ]
-    )
     VCR.insert_cassette "weather_call"
  end
 
@@ -61,5 +48,12 @@ RSpec.describe GetWeather do
     end
  end
 
+ context "address is incorrect" do
+    let(:address) do
+        create(:address, city: "Can Francisco")
+    end
+
+    it { is_expected.to be_falsey }
+  end
 end
  

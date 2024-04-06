@@ -4,10 +4,21 @@ class AddressesController < ApplicationController
     end    
 
     def create
-        @address = Address.find_or_create(address_params)
-        GetWeather.run!(address: @address)
+        @address = Address.find_by(address_params)
+        if @address.nil?
+            @address = Address.create(address_params)
+        end        
+        success = true if @address 
+        success =  GetCoordinates.run!(address: @address)
+        if success
+            success = GetWeather.run!(address: @address)
+        end
 
-        render :show
+        if @address && success
+            redirect_to address_path(id: @address.id)
+        else
+            flash[:notice] = "Address is incorrect or something went wrong, try again."
+        end
     end
 
     def update_weather
@@ -15,7 +26,6 @@ class AddressesController < ApplicationController
         GetWeather.run!(address: @address)
         render :show
     end
-
 
     def show
         @address = Address.find_by(id: params[:id])        
@@ -26,6 +36,4 @@ class AddressesController < ApplicationController
     def address_params
         params.permit(:street_address, :city, :state, :zip)
     end
-
-    
 end

@@ -1,6 +1,6 @@
 <hr>
-<%=link_to "Get latest weather", :update_weather_address, params: {id: @address.id} %> | 
-<a href="/">Go back</a>
+<%=link_to "Go back", "/" %> | 
+<%=link_to "Update weather for address", update_weather_address_path(id: @address.id) %> 
 <hr>
 
 <h1>Weather for Address: </h1>
@@ -46,8 +46,8 @@
     </p>
     <hr>
 <% end %>
+<hr>
+<%=link_to "Go back", "/" %> | 
+<%=link_to "Update weather for address", update_weather_address_path(id: @address.id) %> 
+<hr>
 
-<hr>
-<%=link_to "Get latest weather", :update_weather_address, params: {id: @address.id} %> | 
-<a href="/">Go back</a>
-<hr>
