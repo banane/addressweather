@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=ea13eaa5266f286c9fb198819f501276&lat=37.80384375&lon=-122.41450776538997&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 06 Apr 2024 19:33:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '493'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=37.8&lon=-122.41&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-122.4058,"lat":37.8024},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"base":"stations","main":{"temp":56.86,"feels_like":54.91,"temp_min":53.49,"temp_max":60.73,"pressure":1027,"humidity":57},"visibility":10000,"wind":{"speed":8.99,"deg":259,"gust":15.99},"clouds":{"all":20},"dt":1712431698,"sys":{"type":2,"id":2007646,"country":"US","sunrise":1712411180,"sunset":1712457417},"timezone":-25200,"id":5391959,"name":"San
+        Francisco","cod":200}'
+  recorded_at: Sat, 06 Apr 2024 19:33:29 GMT
+recorded_with: VCR 6.2.0
