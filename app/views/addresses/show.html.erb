@@ -26,7 +26,7 @@
 <% @address.weather.order("created_at DESC").each do |day_weather| %>
     <p>
         <b>as of:</b>
-        <b><%= day_weather&.created_at.strftime("%b %d, %Y %H:%M:%S") %></b>
+        <b><%= day_weather&.created_at_formatted %></b>
     </p>
     <p>
         <b>from cache</b>

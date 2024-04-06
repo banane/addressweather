@@ -15,18 +15,18 @@ class GetWeather < ActiveInteraction::Base
 
     def get_weather
         from_cache = true
-        weatherJson = Rails.cache.read(cache_key, expires_in: 30.minutes) do
-            binding.pry
+        weatherJson = Rails.cache.read(address.zip)
+        if !weatherJson
             from_cache = false
             uri = "https://api.openweathermap.org/data/2.5/weather?units=imperial&lat="
             uri += address.latitude.to_s + "&lon=" + address.longitude.to_s
             uri += "&appid="+ ENV["WEATHER_API_KEY"]
             res = Net::HTTP.get_response(URI.parse(uri))
             json_resp =  res.body if res.is_a?(Net::HTTPSuccess)
-            weatherJson = JSON.parse(json_resp)    
+            weatherJson = JSON.parse(json_resp)
+            Rails.cache.write(address.zip, weatherJson, expires_in: 30.minutes)
         end
-
-        # store response
+        
         weather = Weather.new
         weather.address = address
         weather.description = weatherJson["weather"][0]["description"]

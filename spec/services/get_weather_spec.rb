@@ -23,12 +23,13 @@ RSpec.describe GetWeather do
 
  before do  
     VCR.insert_cassette "weather_call"
+    Rails.cache.clear
  end
 
  after do
     VCR.eject_cassette
+    Rails.cache.clear
  end
-
 
  it "returns address weather" do
     subject
@@ -38,5 +39,7 @@ RSpec.describe GetWeather do
     expect(weather_0.humidity).to eq(humidity)
     expect(weather_0.visibility).to eq(visibility)
  end
+
+   
 end
  
