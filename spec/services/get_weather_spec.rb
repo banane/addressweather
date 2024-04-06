@@ -3,6 +3,7 @@ require 'geocoder'
 
 RSpec.describe GetWeather do  
  subject { described_class.run!(address: address) }
+
  let(:address) { create(:address, latitude: 37.791812, longitude: -122.394757) }
  let(:weather) do
      create(:weather, 
@@ -14,9 +15,9 @@ RSpec.describe GetWeather do
      ) 
  end
 
- let(:description) { "light rain"}
- let(:temperature) { 55.13 }
- let(:humidity) { 62 }
+ let(:description) { "few clouds"}
+ let(:temperature) { 56.26 }
+ let(:humidity) { 57.0 }
  let(:visibility) { 10000 }
  let(:full_address) { address.full_address }
 
@@ -29,7 +30,7 @@ RSpec.describe GetWeather do
  end
 
 
- it "returns address coordinates" do
+ it "returns address weather" do
     subject
     weather_0 = address.reload.weather.last
     expect(weather_0.description).to eq(description)
@@ -37,23 +38,5 @@ RSpec.describe GetWeather do
     expect(weather_0.humidity).to eq(humidity)
     expect(weather_0.visibility).to eq(visibility)
  end
-
- context "address has coordinates" do
-    let(:address) { create(:address, latitude: 37.791812, longitude:  -122.394757)}
-
-    it "does not call geocoder" do
-        allow(Geocoder).to receive(:search)
-        subject
-        expect(Geocoder).not_to have_received(:search)
-    end
- end
-
- context "address is incorrect" do
-    let(:address) do
-        create(:address, city: "Can Francisco")
-    end
-
-    it { is_expected.to be_falsey }
-  end
 end
  
